@@ -21,6 +21,8 @@ class ColorsTransaction extends BaseTransaction implements iTransaction
     }
     public function show($id)
     {
+        $model = new Colors();
+        return $model->find($id);
     }
     /**
      * Obtiene todos los elementos del objeto
@@ -37,19 +39,23 @@ class ColorsTransaction extends BaseTransaction implements iTransaction
         $data = $this->get($model, $filter, $search, $orderBy, $orderType);
         return $data->get();
     }
-    public function erase($id)
+
+    public function destroy($id)
     {
+        $id->delete();
     }
+
     public function create(array $data)
     {
         $model = new Colors();
-        $content = $model->where(["colorName" => $data["colorName"]])->first();
+        $content = $model->where(["name" => $data["name"]])->first();
         if ($content) {
             return $this->update($content->id, $data);
         }
         $model = $this->setModelData($model, $data);
-
+        
         $this->validator->validate($model);
+
         $model->save();
         return $this->last($model);
     }
