@@ -1,0 +1,13 @@
+{
+  "primaryColor": "#007733",
+  "secondaryColor": "#007777",
+  "warningColor": "#ff9800",
+  "dangerColor": "#f44336",
+  "successColor": "#4caf50",
+  "infoColor": "#00acc1",
+  "grayColor": "#999999",
+  "fontColor": "#333333",
+  "roseColor": "#998800",
+  "linkColor": "#e91e63",
+  "shadowColor": "#cccccc"
+}
